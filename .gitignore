@@ -1,5 +1,1 @@
-.ninja_log
-.ninja_deps
 build
-.cache/clangd/index
-stm32_g0_hal

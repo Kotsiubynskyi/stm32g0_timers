@@ -3,7 +3,7 @@
     "configurations": [
         {
             "cwd": "${workspaceFolder}",
-            "executable": "${workspaceFolder}/build/blink",
+            "executable": "${workspaceFolder}/build/timers_demo",
             "type": "cortex-debug",
             "name": "Debug with ST-Link",
             "request": "launch",
@@ -20,7 +20,7 @@
         },
         {
             "name": "Debug with OpenOCD",
-            "executable": "${workspaceFolder}/build/blink",
+            "executable": "${workspaceFolder}/build/timers_demo",
             "type": "cortex-debug",
             "servertype": "openocd",
             "device": "STM32G030",

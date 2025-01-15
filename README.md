@@ -1,18 +1,18 @@
-Instructions written for Ubuntu (Debian) of simple blink project for STM32G0F6P6 with LED on pin ***PA4***
+The repository demonstrates different modes of ***STM32G0F6P6*** timers 
 
-## How to build and flash
+## How to build and flash (for Ubuntu)
 
 1. Install needed ARM development toolchain and other utilities:
     ```bash
     apt update; apt install -y cmake git usbutils ninja-build gcc-arm-none-eabi stlink-tools
     ```
-1. Important: current repository uses submodules so please clone the project ***recursively***:
+1. Clone the project:
     ```bash
-    git clone --recursive https://github.com/Kotsiubynskyi/stm32_g0_blink_cmake.git blink
+    git clone https://github.com/Kotsiubynskyi/stm32g0_timers.git stm32g0_timers_demo
     ```
 1. Generate build files:
     ```bash
-    cd blink
+    cd stm32g0_timers_demo
     mkdir build
     cd build
     cmake .. -G Ninja
@@ -27,5 +27,5 @@ Instructions written for Ubuntu (Debian) of simple blink project for STM32G0F6P6
     ```
 1. Upload built firmware to MCU:
     ```bash
-    st-flash erase && st-flash --reset write blink.bin 0x8000000
+    st-flash erase && st-flash --reset write timers_demo.bin 0x8000000
     ```

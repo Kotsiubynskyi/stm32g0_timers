@@ -3,24 +3,25 @@ cmake_minimum_required(VERSION 3.15)
 set(CMAKE_TOOLCHAIN_FILE "STM32G0_toolchain.cmake")
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-project(blink LANGUAGES C CXX ASM)
+project(timers_demo LANGUAGES C CXX ASM)
 
 # Source files
 add_executable(${PROJECT_NAME}
   src/main.c
   src/stm32g0xx_it.c
+  src/system_stm32g0xx.c
+  src/startup_stm32g030xx.s
   src/hal/stm32g0xx_hal.c
   src/hal/stm32g0xx_hal_tim.c
   src/hal/stm32g0xx_hal_tim_ex.c
   src/hal/stm32g0xx_hal_gpio.c
   src/hal/stm32g0xx_hal_cortex.c
-  src/system_stm32g0xx.c
-  src/startup_stm32g030xx.s
 )
 
 # Directories with headers
 target_include_directories(${PROJECT_NAME} PRIVATE
   include
+  include/examples
   include/hal
   include/hal/Legacy
   include/cmsis
@@ -30,7 +31,8 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 target_compile_options(${PROJECT_NAME} PRIVATE
   -mcpu=cortex-m0
   -mthumb
-  -Os
+  -g
+  # -Os
   -ffunction-sections # Place functions in separate sections
   -fdata-sections # Place data in separate sections
   -fno-exceptions # Disable exceptions for bare-metal code
