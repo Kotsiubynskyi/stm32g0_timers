@@ -1,4 +1,4 @@
-The repository demonstrates different modes of ***STM32G0F6P6*** timers 
+The repository demonstrates different modes of ***STM32G0F6P6*** timers: simple counter, interrupt mode, OC mode, PWM
 
 ## How to build and flash (for Ubuntu)
 
