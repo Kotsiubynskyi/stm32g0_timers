@@ -121,7 +121,7 @@ void example4()
     __HAL_RCC_TIM14_CLK_ENABLE();
 
     htim14.Instance = TIM14;
-    htim14.Init.Prescaler = 16 - 1; //downclock timer to 100 kHz
+    htim14.Init.Prescaler = 16 - 1; //downclock timer to 1 MHz
     htim14.Init.Period = 1000 - 1;  //count to 1000
 
     TIM_OC_InitTypeDef htimOcConfig = {0};
